@@ -19,7 +19,7 @@ public class LoginDAO {
     public boolean Login(String usuario, String contraseña) throws SQLException, InstantiationException, ClassNotFoundException, IllegalAccessException {
         con = conectar.conectar();
 
-        String sql = "select * Login where usuario = ? and contraseña = ?";
+        String sql = "select * from `login` where usuario = ? and contraseña = ?";
 
         try {
             ps = con.prepareStatement(sql);
