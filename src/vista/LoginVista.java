@@ -1,6 +1,7 @@
 
 package vista;
 import java.awt.Color;
+import controlador.ControladorInicio;
 public class LoginVista extends javax.swing.JFrame {
 
     int Xmouse, Ymouse;
@@ -309,7 +310,7 @@ public class LoginVista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContrasenaMousePressed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnEntrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseEntered

@@ -4,14 +4,19 @@
  */
 package vista;
 
+import controlador.ControladorRC;
+import controlador.ControladorRE;
 import java.awt.event.ActionListener;
+import vista.InicioVista;
+import vista.RegistrarCaja;
+import vista.RegistrarExpediente;
 
 /**
  *
  * @author rurba
  */
 public class InicioVista extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form NewJFrame
      */
@@ -32,8 +37,8 @@ public class InicioVista extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        btnREI = new javax.swing.JButton();
+        btnRegistrarEX = new javax.swing.JButton();
+        btnRegistrarCA = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -69,28 +74,28 @@ public class InicioVista extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton2.setBackground(new java.awt.Color(54, 38, 87));
-        jButton2.setFont(new java.awt.Font("Segoe UI Variable", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Registrar Expediente");
-        jButton2.setBorder(null);
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.setPreferredSize(new java.awt.Dimension(84, 20));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarEX.setBackground(new java.awt.Color(54, 38, 87));
+        btnRegistrarEX.setFont(new java.awt.Font("Segoe UI Variable", 0, 14)); // NOI18N
+        btnRegistrarEX.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarEX.setText("Registrar Expediente");
+        btnRegistrarEX.setBorder(null);
+        btnRegistrarEX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRegistrarEX.setPreferredSize(new java.awt.Dimension(84, 20));
+        btnRegistrarEX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegistrarEXActionPerformed(evt);
             }
         });
 
-        btnREI.setBackground(new java.awt.Color(54, 38, 87));
-        btnREI.setFont(new java.awt.Font("Segoe UI Variable", 0, 14)); // NOI18N
-        btnREI.setForeground(new java.awt.Color(255, 255, 255));
-        btnREI.setText("Registrar Caja");
-        btnREI.setBorder(null);
-        btnREI.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnREI.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarCA.setBackground(new java.awt.Color(54, 38, 87));
+        btnRegistrarCA.setFont(new java.awt.Font("Segoe UI Variable", 0, 14)); // NOI18N
+        btnRegistrarCA.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarCA.setText("Registrar Caja");
+        btnRegistrarCA.setBorder(null);
+        btnRegistrarCA.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRegistrarCA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnREIActionPerformed(evt);
+                btnRegistrarCAActionPerformed(evt);
             }
         });
 
@@ -141,8 +146,8 @@ public class InicioVista extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnREI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnRegistrarCA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarEX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -164,9 +169,9 @@ public class InicioVista extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnREI, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarCA, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistrarEX, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -203,13 +208,17 @@ public class InicioVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void btnREIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnREIActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnREIActionPerformed
+    private void btnRegistrarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCAActionPerformed
+        RegistrarCaja registrarCaja = new RegistrarCaja();
+        ControladorRC controladorRC = new ControladorRC(registrarCaja);
+        registrarCaja.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarCAActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnRegistrarEXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEXActionPerformed
+        RegistrarExpediente registrarExpediente = new RegistrarExpediente();
+        ControladorRE controladorRE = new ControladorRE(registrarExpediente);
+        registrarExpediente.setVisible(true);
+    }//GEN-LAST:event_btnRegistrarEXActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,10 +263,10 @@ public class InicioVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnREI;
+    public javax.swing.JButton btnRegistrarCA;
+    public javax.swing.JButton btnRegistrarEX;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
@@ -268,11 +277,4 @@ public class InicioVista extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 
-    public void agregarListenerExpediente(ActionListener actionListener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void agregarListenerCaja(ActionListener actionListener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

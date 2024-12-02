@@ -54,7 +54,7 @@ import vista.InicioVista;
                 System.out.println("verificando si los datos existen!");
                 if (dao.Login(usuario, contrasena)) {
                     JOptionPane.showMessageDialog(loginv, "Ingresado con exito!", "Exito!", JOptionPane.INFORMATION_MESSAGE);
-                    login.setVisible(false);
+                    login.setVisible(true);
                     InicioVista v = new InicioVista();
                     ControladorInicio control = new ControladorInicio(v);
                     v.setVisible(true);
