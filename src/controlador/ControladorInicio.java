@@ -18,6 +18,7 @@ public class ControladorInicio {
     private InicioVista inicioVista;
     
     public ControladorInicio(InicioVista inicioVista) {
+        this.inicioVista = inicioVista;
         this.inicioVista.setVisible(true);
     }
 
@@ -25,13 +26,11 @@ public class ControladorInicio {
         RegistrarExpediente registrarExpediente = new RegistrarExpediente();
         ControladorRE controladorRE = new ControladorRE(registrarExpediente);
         inicioVista.dispose(); // Cierra la vista actual.
-        registrarExpediente.setVisible(true);
     }
 
     private void abrirVistaCaja() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         RegistrarCaja registrarCaja = new RegistrarCaja();
         ControladorRC controladorRC = new ControladorRC(registrarCaja);
         inicioVista.dispose(); // Cierra la vista actual.
-        registrarCaja.setVisible(true);
     }
 }

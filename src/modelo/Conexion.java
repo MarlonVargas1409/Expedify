@@ -14,7 +14,7 @@ public class Conexion {
     /*crearemos las variables que contienen las informaciones principales
     para la conexion a MYSQL*/
     
-    String db = "gestor_archivo";
+    String db = "Expedify - SQL";
     String url = "jdbc:mysql://localhost:3306/";
     String usuario = "root";
     String contraseña = "";

@@ -7,6 +7,8 @@ package vista;
 import controlador.ControladorRC;
 import controlador.ControladorRE;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import vista.InicioVista;
 import vista.RegistrarCaja;
 import vista.RegistrarExpediente;
@@ -210,7 +212,15 @@ public class InicioVista extends javax.swing.JFrame {
 
     private void btnRegistrarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCAActionPerformed
         RegistrarCaja registrarCaja = new RegistrarCaja();
-        ControladorRC controladorRC = new ControladorRC(registrarCaja);
+        try {
+            ControladorRC controladorRC = new ControladorRC(registrarCaja);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(InicioVista.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(InicioVista.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(InicioVista.class.getName()).log(Level.SEVERE, null, ex);
+        }
         registrarCaja.setVisible(true);
     }//GEN-LAST:event_btnRegistrarCAActionPerformed
 

@@ -13,9 +13,9 @@ public class RegistroCajaDAO {
     ResultSet rs;
 
     // En este metodo se registraran los datos para registrar la caja
-    public int registrarcaja(RegistroCaja r) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-
-        String sql = "insert into caja (estado,expediente,sala, caja,departamento, usuario, fecha,comentario) value (?,?,?,?,?,?,?,?)";
+    public boolean registrarcaja(RegistroCaja r) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        String sql = "insert into caja (estado, expediente, sala, caja, departamento, usuario, fecha, comentario) values (?, ?, ?, ?, ?, ?, ?, ?)";
+        boolean success = false;
 
         try {
             con = conectar.conectar();
@@ -26,73 +26,94 @@ public class RegistroCajaDAO {
             ps.setString(4, r.getSala());
             ps.setString(5, r.getDepartamento());
             ps.setString(6, r.getUsuario());
-            ps.setString(7, r.getFecha());
+            ps.setDate(7, Date.valueOf(r.getFecha()));  // Asegúrate de que r.getFecha() sea un formato adecuado.
             ps.setString(8, r.getComentario());
 
-            ps.execute();
+            int result = ps.executeUpdate();
+            if (result > 0) {
+                success = true;
+            }
         } catch (SQLException e) {
-            System.out.println("error al registrar un dato" + e);
+            System.out.println("Error al registrar un dato: " + e);
+        } finally {
+            try {
+                if (ps != null) ps.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
         }
-        return 1;
+        return success;
     }
-    // metodo para listar los datos
 
-    public List listar() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        String sql = "select * caja";
+    // metodo para listar los datos
+    public List<RegistroCaja> listar() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        String sql = "select * from caja";
         List<RegistroCaja> datos = new ArrayList<>();
         try {
-
             con = conectar.conectar();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                //RegistroCaja cj = new  RegistroCaja();
                 RegistroCaja cj = new RegistroCaja();
-                cj.setEstado(rs.getString(1));
-                cj.setExpediente(rs.getString(2));
-                cj.setCaja(rs.getString(3));
-                cj.setSala(rs.getString(4));
-                cj.setDepartamento(rs.getString(5));
-                cj.setUsuario(rs.getString(6));
-                cj.setFecha(rs.getString(7));
-                cj.setComentario(rs.getString(8));
+                cj.setEstado(rs.getString("estado"));
+                cj.setExpediente(rs.getString("expediente"));
+                cj.setCaja(rs.getString("caja"));
+                cj.setSala(rs.getString("sala"));
+                cj.setDepartamento(rs.getString("departamento"));
+                cj.setUsuario(rs.getString("usuario"));
+                cj.setFecha(rs.getString("fecha"));
+                cj.setComentario(rs.getString("comentario"));
                 datos.add(cj);
             }
         } catch (SQLException e) {
-            System.out.println("No se pudieron listar los datos" + e);
+            System.out.println("No se pudieron listar los datos: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
         }
         return datos;
     }
 
     // metodo para buscar por numero de expediente
-    public List buscar(String Buscar) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-
-        String sql = "select * from expedientewhere expediente like '%" + Buscar + "%'";
-
+    public List<RegistroCaja> buscar(String buscar) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        String sql = "select * from caja where expediente like ?";
         List<RegistroCaja> datos = new ArrayList<>();
         try {
-
             con = conectar.conectar();
             ps = con.prepareStatement(sql);
+            ps.setString(1, "%" + buscar + "%");
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 RegistroCaja cj = new RegistroCaja();
-                cj.setEstado(rs.getString(1));
-                cj.setExpediente(rs.getString(2));
-                cj.setCaja(rs.getString(3));
-                cj.setSala(rs.getString(4));
-                cj.setDepartamento(rs.getString(5));
-                cj.setUsuario(rs.getString(6));
-                cj.setFecha(rs.getString(7));
-                cj.setComentario(rs.getString(8));
+                cj.setEstado(rs.getString("estado"));
+                cj.setExpediente(rs.getString("expediente"));
+                cj.setCaja(rs.getString("caja"));
+                cj.setSala(rs.getString("sala"));
+                cj.setDepartamento(rs.getString("departamento"));
+                cj.setUsuario(rs.getString("usuario"));
+                cj.setFecha(rs.getString("fecha"));
+                cj.setComentario(rs.getString("comentario"));
                 datos.add(cj);
             }
         } catch (SQLException e) {
             System.out.println("Error al buscar expediente: " + e);
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
         }
         return datos;
     }
-
 }
