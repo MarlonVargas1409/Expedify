@@ -50,7 +50,7 @@ public class ControladorRE implements ActionListener {
             r.setTribunal(vista.menuTribunal.getSelectedItem().toString());
             r.setSala(vista.menuSala.getSelectedItem().toString());
             r.setPropietario(vista.txtPropietarioEX.getText());
-            r.setFecha(new java.util.Date()); // Fecha actual
+            r.setFecha(vista.txtFechaEX.getText());
             dao.registrar(r);
             JOptionPane.showMessageDialog(null, "Expediente registrado exitosamente.");
             listarExpedientes();
@@ -102,7 +102,7 @@ public class ControladorRE implements ActionListener {
             r.setTribunal(vista.menuTribunal.getSelectedItem().toString());
             r.setSala(vista.menuSala.getSelectedItem().toString());
             r.setPropietario(vista.txtPropietarioEX.getText());
-            r.setFecha(new java.util.Date());
+            r.setFecha(vista.txtFechaEX.getText());
             dao.actualizar(r);
             JOptionPane.showMessageDialog(null, "Expediente modificado exitosamente.");
             listarExpedientes();

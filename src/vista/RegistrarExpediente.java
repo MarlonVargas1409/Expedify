@@ -48,7 +48,7 @@ public class RegistrarExpediente extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtFechaEX = new javax.swing.JTextField();
         txtBuscarEX = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaEX = new javax.swing.JTable();
@@ -194,9 +194,9 @@ public class RegistrarExpediente extends javax.swing.JFrame {
         jLabel13.setText("Fecha de Ingreso");
         jLabel13.setPreferredSize(new java.awt.Dimension(59, 16));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtFechaEX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtFechaEXActionPerformed(evt);
             }
         });
 
@@ -272,7 +272,7 @@ public class RegistrarExpediente extends javax.swing.JFrame {
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField6)
+                            .addComponent(txtFechaEX)
                             .addComponent(menuSala, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(menuTribunal, 0, 577, Short.MAX_VALUE)))
                     .addComponent(jScrollPane2)
@@ -315,7 +315,7 @@ public class RegistrarExpediente extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtPropietarioEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtFechaEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -359,9 +359,9 @@ public class RegistrarExpediente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarEXActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtFechaEXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaEXActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtFechaEXActionPerformed
 
     private void btnRegistrarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCAActionPerformed
         // TODO add your handling code here:
@@ -443,13 +443,13 @@ public class RegistrarExpediente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JTextField jTextField6;
     public javax.swing.JComboBox<String> menuSala;
     public javax.swing.JComboBox<String> menuTipoEX;
     public javax.swing.JComboBox<String> menuTribunal;
     public javax.swing.JTable tablaEX;
     public javax.swing.JTextField txtBuscarEX;
     public javax.swing.JTextField txtExpedienteEX;
+    public javax.swing.JTextField txtFechaEX;
     public javax.swing.JTextField txtPropietarioEX;
     // End of variables declaration//GEN-END:variables
 }

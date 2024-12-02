@@ -10,7 +10,7 @@ public class RegistroExpediente {
     private String tribunal;
     private String sala;
     private String propietario;
-    private Date fecha;
+    private String fecha;
     private String buscar;
     
     
@@ -20,7 +20,7 @@ public class RegistroExpediente {
     public RegistroExpediente() {
     }
 
-    public RegistroExpediente(String expediente, String tipo_expediente, String tribunal, String sala, String propietario, Date fecha,int id,String buscar) {
+    public RegistroExpediente(String expediente, String tipo_expediente, String tribunal, String sala, String propietario, String fecha,int id,String buscar) {
         this.expediente = expediente;
         this.tipo_expediente = tipo_expediente;
         this.tribunal = tribunal;
@@ -71,11 +71,11 @@ public class RegistroExpediente {
         this.propietario = propietario;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

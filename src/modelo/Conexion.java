@@ -7,14 +7,11 @@ import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
-
 public class Conexion {
     /*crearemos las variables que contienen las informaciones principales
     para la conexion a MYSQL*/
     
-    String db = "Expedify - SQL";
+    String db = "ExpedifySQL";
     String url = "jdbc:mysql://localhost:3306/";
     String usuario = "root";
     String contraseña = "";
@@ -37,7 +34,6 @@ public class Conexion {
       return con; 
       }
     
-    
     //metodo para que desconectar la base de datos con java
     public void desconectar()throws SQLException, ClassNotFoundException,InstantiationException,IllegalAccessException{
           try{
@@ -45,10 +41,5 @@ public class Conexion {
           }catch(SQLException e){
            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
           }
-          
       }
-        
-       
-    
-    
 }

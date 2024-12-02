@@ -30,7 +30,7 @@ public class RegistroExpedienteDAO {
             ps.setString(3, r.getTribunal());
             ps.setString(4, r.getSala());
             ps.setString(5, r.getPropietario());
-            ps.setDate(6, new java.sql.Date(r.getFecha().getTime()));
+            ps.setString(6, r.getFecha());
 
 
             ps.execute();    
@@ -57,7 +57,7 @@ public class RegistroExpedienteDAO {
                 rge.setTribunal(rs.getString(3));
                 rge.setSala(rs.getString(4));
                 rge.setPropietario(rs.getString(5));
-                rge.setFecha(rs.getDate(6));
+                rge.setFecha(rs.getString(6));
                 datos.add(rge);
             }
         }catch(SQLException e){
@@ -86,7 +86,7 @@ public class RegistroExpedienteDAO {
                 re.setTribunal(rs.getString(3));
                 re.setSala(rs.getString(4));
                 re.setPropietario(rs.getString(5));
-                re.setFecha(rs.getDate(6));
+                re.setFecha(rs.getString(6));
                 datos.add(re);
             }
         }catch(SQLException e){
@@ -110,7 +110,7 @@ public class RegistroExpedienteDAO {
             ps.setString(3, r.getTribunal());
             ps.setString(4, r.getSala());
             ps.setString(5, r.getPropietario());
-            ps.setDate(6, new java.sql.Date(r.getFecha().getTime()));
+            ps.setString(6, r.getFecha());
             m = ps.executeUpdate();
             
             if(m == 1){
