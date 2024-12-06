@@ -101,23 +101,7 @@ Sigue estos pasos para instalar y configurar el proyecto:
 2. Clona el proyecto en tu máquina local utilizando:  
    ```bash
    git clone https://github.com/MarlonVargas1409/Expedify.git
-Crea una nueva rama para realizar tus cambios:
-bash
-Copiar código
-git checkout -b nombre-de-tu-rama
-Realiza tus modificaciones y confirma los cambios:
-bash
-Copiar código
-git add .  
-git commit -m "Descripción de los cambios"  
-Envía tu rama al repositorio remoto:
-bash
-
-git push origin nombre-de-tu-rama
-Abre un pull request desde GitHub para que podamos revisar tus cambios.
 Licencia
 Actualmente, Expedify no cuenta con una licencia específica. Al tratarse de un proyecto de código abierto, se encuentra disponible para ser usado y adaptado según las necesidades de la comunidad.
 
 
-
-Copia y pega este texto directamente en tu archivo `README.md`. ¡Está listo para usarse!
